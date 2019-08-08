@@ -1,0 +1,31 @@
+{
+  "name": "toru-runs4good",
+  "version": "1.0.0",
+  "description": "This demenstrates integrating website seamlessly with Twitter.",
+  "private": true,
+  "scripts": {
+    "start": "next start",
+    "build": "next build",
+    "deploy": "now"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torufurukawa/toru-runs4good.git"
+  },
+  "keywords": [],
+  "author": "Toru Furukawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/torufurukawa/toru-runs4good/issues"
+  },
+  "homepage": "https://github.com/torufurukawa/toru-runs4good#readme",
+  "dependencies": {
+    "next": "^9.0.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-router-dom": "^5.0.1"
+  },
+  "devDependencies": {
+    "now": "^16.1.1"
+  }
+}
