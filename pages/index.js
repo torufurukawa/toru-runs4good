@@ -55,7 +55,7 @@ class App extends React.Component {
         </span>,
         ok: 'ならば寄付しよう💡',
         done: 'もう寄付したよ💸',
-        url: this.charitySheetUrl
+        url: 'https://www.runwithheart.jp/charity_sheet/23530'
       },
       en: {
         text: <span>
@@ -68,7 +68,7 @@ class App extends React.Component {
         </span>,
         ok: 'I will happily support 💡',
         done: 'I supported 💸',
-        url: this.charitySheetUrl
+        url: 'https://www.runwithheart.jp/en/charity_sheet/23530'
       }
     },
     timeEstimation: {
@@ -120,15 +120,15 @@ class App extends React.Component {
     prompt: {
       ja: {
         templateLines: [
-          '国境なき医師団 @MSFJapan を応援します 👏<BR>',
+          '国境なき医師団 @MSFJapan を応援します 👏\n',
           'チャリティランナー @ToruRunsForGood が',
           '東京マラソン🗼🏃を<HOURS>:<MINUTES>⏰で完走できるように、',
-          '<LOCATION>で応援します<BR> 👏 #ToruRunsForGood <URL>'
+          '<LOCATION>で応援します 👏 \n#ToruRunsForGood <URL>'
         ]
       },
       en: {
         templateLines: [
-          'I support @MSFJapan charity runner @ToruRunsForGood.👏 ',
+          'I support @MSFJapan charity runner @ToruRunsForGood.👏\n',
           'I will be <LOCATION> to cheer him <HOURS>:<MINUTES> marathon 🗼🏃 race. ',
           '#ToruRunsForGood <URL>'
         ]
@@ -227,7 +227,6 @@ class App extends React.Component {
       data['<MINUTES>'] = this.state.estimate.minutes
       data['<LOCATION>'] = this.state.location
       data['<URL>'] = this.props.currentUrl
-      data['<BR>'] = '\n'
       const lines = this.contents.prompt[this.state.lang || 'ja'].templateLines
       const template = lines.join('')
       const text = Object.keys(data).reduce((result, key) => {
