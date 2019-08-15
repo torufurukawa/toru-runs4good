@@ -196,8 +196,6 @@ class App extends React.Component {
               onClick={this.setLocation.bind(this)} />
           </Carousel.Item>
         </Carousel>
-
-        <ResetButton reset={this.reset.bind(this)} />
       </Cuckoo.Container>
     ]
   }
