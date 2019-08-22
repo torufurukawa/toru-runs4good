@@ -31,6 +31,6 @@
     "react-router-dom": "^5.0.1"
   },
   "devDependencies": {
-    "now": "^16.1.1"
+    "now": "^16.1.2"
   }
 }
