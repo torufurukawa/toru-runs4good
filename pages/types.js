@@ -143,7 +143,7 @@ class App extends React.Component {
           '国境なき医師団は、色んな分野のエキスパート集団なんだって。\n',
           'みんなも診断を試してみて！👇\n',
           '#ToruRunsForGood\n',
-          'https://localhost:3000/types'
+          '<URL>'
         ].join(''),
         role: {
           doctor: '👩‍⚕️医師',
@@ -161,7 +161,7 @@ class App extends React.Component {
           'Did you know MSF consists of many types of experts?\n',
           'Try this test and share your result!👇\n',
           '#ToruRunsForGood\n',
-          'https://localhost:3000/types'
+          '<URL>'
         ].join(''),
         role: {
           doctor: '👩‍⚕️ Doctor',
