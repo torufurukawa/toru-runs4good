@@ -142,6 +142,7 @@ class App extends React.Component {
           '「<TYPE>」タイプでした\n',
           '国境なき医師団は、色んな分野のエキスパート集団なんだって。\n',
           'みんなも診断を試してみて！👇\n',
+          '#ToruRunsForGood\n',
           'https://localhost:3000/types'
         ].join(''),
         role: {
@@ -158,7 +159,8 @@ class App extends React.Component {
           '🌟The result of MSF expert test is...🌟\n',
           'I am suitable for "<TYPE>"\n',
           'Did you know MSF consists of many types of experts?\n',
-          'Try this test and share your result too!👇\n',
+          'Try this test and share your result!👇\n',
+          '#ToruRunsForGood\n',
           'https://localhost:3000/types'
         ].join(''),
         role: {
@@ -172,7 +174,7 @@ class App extends React.Component {
       }
     },
     card: {
-      title: 'MSF Expert Test',
+      title: 'MSF Expert Test | 国境なき医師団診断',
       description: `What's your experties? | あなたは何タイプ？`
     }
   }
