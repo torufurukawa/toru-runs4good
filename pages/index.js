@@ -1,4 +1,5 @@
 import 'react'
+import Locate from '../components/Locate'
 import Head from 'next/head'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Carousel, InputGroup, FormControl } from 'react-bootstrap'
@@ -8,6 +9,8 @@ import '@torufurukawa/cuckoo/dist/style.css'
 // -------------------------------------------------------------
 // App
 // -------------------------------------------------------------
+
+const path = '/'
 
 class App extends React.Component {
   static get initialState() {
@@ -145,15 +148,7 @@ class App extends React.Component {
     this.state = App.initialState
   }
 
-  static async getInitialProps({ req }) {
-    return {
-      currentUrl: `https://${req.headers.host}${req.url}`,
-      host: `https://${req.headers.host}`
-    }
-  }
-
   render() {
-    console.log(this.state)
     const lang = this.state.lang || 'ja'
     const imageUrl = this.props.host + require('../static/cardimage.jpg')
 
@@ -226,7 +221,7 @@ class App extends React.Component {
       data['<HOURS>'] = this.state.estimate.hours
       data['<MINUTES>'] = this.state.estimate.minutes
       data['<LOCATION>'] = this.state.location
-      data['<URL>'] = this.props.currentUrl
+      data['<URL>'] = this.props.host + this.props.path
       const lines = this.contents.prompt[this.state.lang || 'ja'].templateLines
       const template = lines.join('')
       const text = Object.keys(data).reduce((result, key) => {
@@ -345,4 +340,4 @@ function ResetButton({ reset }) {
 // main
 // -------------------------------------------------------------
 
-export default App
+export default Locate(path, App)

@@ -1,10 +1,11 @@
 import Head from 'next/head'
+import Locate from '../components/Locate'
 import Cuckoo from '@torufurukawa/cuckoo'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Carousel } from 'react-bootstrap'
 import '@torufurukawa/cuckoo/dist/style.css'
 
-
+const path = '/types'
 class App extends React.Component {
   get initialState() {
     return { lang: null, page: 0, type: null }
@@ -184,13 +185,6 @@ class App extends React.Component {
     this.state = this.initialState
   }
 
-  static async getInitialProps({ req }) {
-    return {
-      currentUrl: `https://${req.headers.host}${req.url}`,
-      host: `https://${req.headers.host}`
-    }
-  }
-
   render() {
     const lang = this.state.lang || 'ja'
     const hasLicense = this.contents.hasLicense[lang]
@@ -198,10 +192,11 @@ class App extends React.Component {
     const preference = this.contents.preference[lang]
     const result = this.contents.result[lang]
     const share = this.contents.share[lang]
+    const currentUrl = this.props.host + this.props.path
 
     let tweetText = share.template
     tweetText = tweetText.replace(/<TYPE>/, share.role[this.state.type])
-    tweetText = tweetText.replace(/<URL>/, this.props.currentUrl)
+    tweetText = tweetText.replace(/<URL>/, currentUrl)
     const webIntent = Cuckoo.linkToTweet(tweetText)
     const imageUrl = this.props.host + require('../static/typescard.jpg')
 
@@ -317,5 +312,4 @@ function LanguageSelector({ useJapanese, useEnglish }) {
   )
 }
 
-
-export default App
+export default Locate(path, App)
