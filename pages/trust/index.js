@@ -6,7 +6,7 @@ import Cuckoo from '@torufurukawa/cuckoo'
 import '@torufurukawa/cuckoo/dist/style.css'
 
 const path = '/trust'
-const tweetId = '1199196932670836736'
+const tweetId = '1199577758512214016'
 
 class App extends React.Component {
   constructor(props) {
