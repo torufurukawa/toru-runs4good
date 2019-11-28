@@ -6,7 +6,7 @@ import Cuckoo from '@torufurukawa/cuckoo'
 import '@torufurukawa/cuckoo/dist/style.css'
 
 const path = '/trust'
-const tweetId = '1199577758512214016'
+const tweetId = '1199864308164751361'
 
 class App extends React.Component {
   constructor(props) {
@@ -16,9 +16,9 @@ class App extends React.Component {
 
   render() {
     const baseUrl = this.props.host + this.props.path
-    const yesContent = baseUrl + '/yes'
+    const yesContent = '🙆 信じる ' + baseUrl + '/yes'
     const yesUrl = inReplyTo(Cuckoo.linkToTweet(yesContent), tweetId)
-    const noContent = baseUrl + '/no'
+    const noContent = '🙅 信じない ' + baseUrl + '/no'
     const noUrl = inReplyTo(Cuckoo.linkToTweet(noContent), tweetId)
     const imageUrl = this.props.host + require('./trust.jpg')
 
